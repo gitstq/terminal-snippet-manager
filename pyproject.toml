@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codesnap-cli"
+version = "1.0.0"
+description = "A blazing fast terminal code snippet manager for developers"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "CodeSnap Team", email = "hello@codesnap.dev"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+keywords = ["code", "snippet", "manager", "cli", "terminal", "developer", "productivity"]
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pyperclip>=1.8.2",
+    "pyyaml>=6.0",
+    "fuzzywuzzy>=0.18.0",
+    "python-Levenshtein>=0.21.0",
+    "prompt-toolkit>=3.0.0",
+]
+
+[project.scripts]
+codesnap = "codesnap.cli:main"
+csp = "codesnap.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/codesnap-cli"
+Documentation = "https://github.com/yourusername/codesnap-cli#readme"
+Repository = "https://github.com/yourusername/codesnap-cli"
+Issues = "https://github.com/yourusername/codesnap-cli/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["codesnap*"]
